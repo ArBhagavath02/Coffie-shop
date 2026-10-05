@@ -84,51 +84,6 @@
 	</main>
 
 	<footer><p>COMMON GROUND COFFEE HOUSE</p><p>Good coffee brings us together.</p><p>© <span id="year"></span> Common Ground</p></footer>
-<<<<<<< HEAD
-
-	<script>
-		const steps = [
-			{ title: "Freshly ground, just for you.", description: "We grind our house beans fine, right before brewing, to keep every shot full of flavor." },
-			{ title: "A balanced double shot.", description: "Hot water pulls a rich, 36-gram espresso with a smooth finish and a little natural sweetness." },
-			{ title: "Silky oat milk, gently warmed.", description: "We steam oat milk until glossy and soft, keeping the texture light enough to let the coffee shine." },
-			{ title: "Maple, espresso, and a careful pour.", description: "A touch of real maple meets the espresso, then we pour in the steamed oat milk and serve it fresh." }
-		];
-		const tabs = [...document.querySelectorAll(".step-tab")];
-		const panel = document.querySelector("#step-panel");
-		const title = document.querySelector("#step-title");
-		const description = document.querySelector("#step-description");
-		const count = document.querySelector("#process-count");
-
-		function selectStep(index, moveFocus = false) {
-			tabs.forEach((tab, tabIndex) => {
-				const selected = tabIndex === index;
-				tab.setAttribute("aria-selected", String(selected));
-				tab.tabIndex = selected ? 0 : -1;
-				if (selected && moveFocus) tab.focus();
-			});
-			title.textContent = steps[index].title;
-			description.textContent = steps[index].description;
-			count.textContent = `Step ${index + 1} of ${steps.length}`;
-			panel.setAttribute("aria-labelledby", tabs[index].id);
-		}
-
-		tabs.forEach((tab, index) => {
-			tab.addEventListener("click", () => selectStep(index));
-			tab.addEventListener("keydown", (event) => {
-				let nextIndex = index;
-				if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
-				else if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
-				else if (event.key === "Home") nextIndex = 0;
-				else if (event.key === "End") nextIndex = tabs.length - 1;
-				else return;
-				event.preventDefault();
-				selectStep(nextIndex, true);
-			});
-		});
-
-		document.querySelector("#year").textContent = new Date().getFullYear();
-	</script>
-=======
   <script src="script.js"></script>
 
 >>>>>>> 7ff9235 (first commit)
